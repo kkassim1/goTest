@@ -16,7 +16,7 @@ const (
 )
 
 func main() {
-	fmt.Println(Hello("chris", ""))
+	fmt.Println(Hello("chris", "yoruba"))
 }
 
 func Hello(name, language string) string {
