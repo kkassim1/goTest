@@ -4,32 +4,44 @@ import "fmt"
 
 const (
 	englishHelloePreflix = "hello,"
-	spanish              = "spanish"
 	spanishprefix        = "hola,"
-	helloworld           = "Hello World"
 	frenchpreflix        = "bonjour,"
-	french               = "french"
-	english              = "english"
+	yorubaprefix         = "báwo,"
+
+	spanish    = "spanish"
+	helloworld = "Hello World"
+	french     = "french"
+	english    = "english"
+	yoruba     = "yoruba"
 )
 
+func main() {
+	fmt.Println(Hello("chris", ""))
+}
+
 func Hello(name, language string) string {
+
 	if name == "" {
 		return helloworld
 	}
 
-	if language == english {
-		return englishHelloePreflix + name
-	}
-
-	if language == spanish {
-		return spanishprefix + name
-	}
-	if language == french {
-		return frenchpreflix + name
-	}
-	return englishHelloePreflix + name
+	return greetingprefix(language) + name
 }
 
-func main() {
-	fmt.Println(Hello("chris", ""))
+func greetingprefix(language string) (prefix string) {
+
+	switch language {
+	case english:
+		prefix = englishHelloePreflix
+	case spanish:
+		prefix = spanishprefix
+	case french:
+		prefix = frenchpreflix
+	case yoruba:
+		prefix = yorubaprefix
+	default:
+		prefix = englishHelloePreflix
+	}
+
+	return
 }
