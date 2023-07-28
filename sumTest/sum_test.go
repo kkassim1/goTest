@@ -3,12 +3,11 @@ package main
 import "testing"
 
 func TestSum(t *testing.T) {
-
-	t.Run("test for sum", func(t *testing.T) {
-		numbers := [5]int{1, 2, 3, 4, 5}
+	t.Run("test for slice", func(t *testing.T) {
+		numbers := []int{1, 2, 3}
 
 		got := sum(numbers)
-		want := 15
+		want := 6
 
 		if got != want {
 			t.Errorf("got %d want %d given, %v", got, want, numbers)
