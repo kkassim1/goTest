@@ -1,12 +1,17 @@
 package main
 
-func sumAll(s1 []int, s2 []int) []int {
+func SumAll(numbersToSum ...[]int) []int {
+	lengthOfNumbers := len(numbersToSum)
+	sums := make([]int, lengthOfNumbers)
 
-	return nil
+	for i, numbers := range numbersToSum {
+		sums[i] = Sum(numbers)
+	}
 
+	return sums
 }
 
-func sum(numArr []int) int {
+func Sum(numArr []int) int {
 	sum := 0
 
 	for _, number := range numArr {
