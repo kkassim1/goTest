@@ -1,14 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type Rectangle struct {
 	Width  float64
 	Height float64
 }
+type Circle struct {
+	Radius float64
+}
 
-func Area(rec Rectangle) float64 {
-	return rec.Height * rec.Width
+func (c Circle) Area() float64 {
+	return math.Pi * c.Radius * c.Radius
+}
+
+func (r Rectangle) Area() float64 {
+	return r.Height * r.Width
 }
 func Perimeter(rec Rectangle) float64 {
 	return 2 * (rec.Width + rec.Height)
