@@ -1,5 +1,19 @@
 package main
 
+import "fmt"
+
+func SumAllTails(s ...[]int) []int {
+
+	var sums []int
+	for _, numbers := range s {
+		tail := numbers[1:]
+		fmt.Println(tail)
+		sums = append(sums, Sum(tail))
+	}
+
+	return sums
+}
+
 func SumAll(sum ...[]int) []int {
 
 	t := make([]int, len(sum))
