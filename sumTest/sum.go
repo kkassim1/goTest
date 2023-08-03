@@ -2,6 +2,18 @@ package main
 
 import "fmt"
 
+type Rectangle struct {
+	Width  float64
+	Height float64
+}
+
+func Area(rec Rectangle) float64 {
+	return rec.Height * rec.Width
+}
+func Perimeter(rec Rectangle) float64 {
+	return 2 * (rec.Width + rec.Height)
+}
+
 func SumAllTails(s ...[]int) []int {
 
 	var sums []int
