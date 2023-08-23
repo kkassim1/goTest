@@ -11,7 +11,7 @@ var (
 
 func (d Dictionary) Add(word, definition string) error {
 
-	if _, err := d.Search(d[word]); err == nil {
+	if _, err := d.Search(word); err == nil {
 
 		return ErrWordExists
 	}
