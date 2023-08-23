@@ -4,10 +4,10 @@ import "testing"
 
 func TestAdd(t *testing.T) {
 	dictionary := Dictionary{}
-	dictionary.Add("test", "this is just a test")
+	dictionary.Add("t", "this is just a test for add")
 
-	want := "this is just a test"
-	got, err := dictionary.Search("test")
+	want := "this is just a test for add"
+	got, err := dictionary.Search("t")
 	if err != nil {
 		t.Fatal("should find added word:", err)
 	}
