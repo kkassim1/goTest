@@ -3,16 +3,23 @@ package main
 import "testing"
 
 func TestAdd(t *testing.T) {
-	dictionary := Dictionary{}
-	dictionary.Add("t", "this is just a test for add")
 
-	want := "this is just a test for add"
-	got, err := dictionary.Search("t")
-	if err != nil {
-		t.Fatal("should find added word:", err)
-	}
+	t.Run("add word", func(t *testing.T) {
 
-	assertStrings(t, got, want)
+		dictionary := Dictionary{}
+		word := "test"
+		definition := "this is just a test"
+
+		dictionary.Add(word, definition)
+
+		assertDefinition(t, dictionary, word, definition)
+
+	})
+
+	t.Run("dont add if word already exist", func(t *testing.T) {
+
+	})
+
 }
 
 func TestSearch(t *testing.T) {
@@ -50,4 +57,14 @@ func assertError(t testing.TB, got, want error) {
 	if got != want {
 		t.Errorf("got error %q want %q", got, want)
 	}
+}
+
+func assertDefinition(t testing.TB, dictionary Dictionary, word, definition string) {
+	t.Helper()
+
+	got, err := dictionary.Search(word)
+	if err != nil {
+		t.Fatal("should find added word:", err)
+	}
+	assertStrings(t, got, definition)
 }
