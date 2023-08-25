@@ -18,9 +18,8 @@ func (e DictionaryErr) Error() string {
 }
 
 func (d Dictionary) Update(word, def string) error {
-	_, err := d.Search(word)
 
-	if err != nil {
+	if _, err := d.Search(word); err != nil {
 		return ErrWordDoesNotExist
 	}
 	d[word] = def
