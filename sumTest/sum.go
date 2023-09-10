@@ -35,7 +35,7 @@ func Perimeter(rec Rectangle) float64 {
 }
 
 func SumAllTails(s ...[]int) []int {
-
+	//
 	var sums []int
 	for _, numbers := range s {
 		tail := numbers[1:]
